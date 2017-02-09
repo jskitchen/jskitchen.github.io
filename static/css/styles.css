@@ -23,6 +23,7 @@
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+  top: 0;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -6788,6 +6789,3 @@ body {
   background-attachment: fixed;
 }
 /* PINGENDO COMMENT DO NOT REMOVE */
-.lol {
-  background: transparent;
-}
