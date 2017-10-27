@@ -2,13 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on JavaScript Kitchen</title>
-    <link>https://javascript-kitchen.js.org/post/index.xml</link>
+    <link>https://javascript-kitchen.js.org/post/</link>
     <description>Recent content in Posts on JavaScript Kitchen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>JavaScript Kitchen</copyright>
     <lastBuildDate>Thu, 12 Jan 2017 18:53:31 +0300</lastBuildDate>
-    <atom:link href="https://javascript-kitchen.js.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://javascript-kitchen.js.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title></title>
