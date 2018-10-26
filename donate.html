@@ -91,13 +91,17 @@ ga('send', 'pageview');
             <div class="row">
                 <div class="col-sm-6">
                     <p>
-                        © 2017-2111 JavaScript Kitchen.
+                        © 2017-<span id="year">2018</span> JavaScript Kitchen.
                         <a href="mailto: javascript.kitchen@yandex.com" title="Contact us"><i class="fa fa-1x fa-fw hub text-inverse fa-envelope"></i></a>
                     </p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+    (function(){var a=document.querySelector("#year");if(a){var b=(new Date).getFullYear();b!==a.innerText&&(a.innerText=b)}})();
+    </script>
 
 </body>
 

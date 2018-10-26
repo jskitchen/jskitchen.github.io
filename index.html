@@ -9,7 +9,7 @@
     <meta name="description" content="Профсоюз JavaScript энтузиастов и ремесленников">
     <meta name="keywords" content="javascript, javascript vk, js, node js, nodejs, es6, react, redux, angular, vue, jquery, typescript, elm, undefined">
 
-    
+
     <meta itemprop="name" content="JavaScript Kitchen">
     <meta itemprop="description" content="Профсоюз JavaScript энтузиастов и ремесленников">
     <meta itemprop="image" content="https://javascript-kitchen.js.org/static/img/jskitchen_cover.png">
@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="JavaScript Kitchen" />
 
 
-    
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@_jskitchen">
 <meta name="twitter:title" content="JavaScript Kitchen">
@@ -37,12 +37,12 @@
 <meta name="twitter:image" content="https://javascript-kitchen.js.org/img/jskitchen_cover.png">
 <meta name="twitter:image:alt" content="Профсоюз JavaScript энтузиастов и ремесленников">
 <meta name="twitter:image" content="https://javascript-kitchen.js.org/img/jskitchen_cover.png">
-    
-    
+
+
     <script async src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"
         data-apikey="93fb313a1bde817b75a6e2a7c416f59c"></script>
-    
-    
+
+
 <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-73754721-1', 'auto');
@@ -100,7 +100,7 @@ ga('send', 'pageview');
             <div class="row">
                 <div class="col-sm-6">
                     <p>
-                        © 2017-2018 JavaScript Kitchen.
+                        © 2017-<span id="year">2018</span> JavaScript Kitchen.
                         <a href="mailto: javascript.kitchen@yandex.com" title="Contact us"><i class="fa fa-1x fa-fw hub text-inverse fa-envelope"></i></a>
                     </p>
                 </div>
@@ -108,6 +108,9 @@ ga('send', 'pageview');
         </div>
     </footer>
 
+    <script>
+    (function(){var a=document.querySelector("#year");if(a){var b=(new Date).getFullYear();b!==a.innerText&&(a.innerText=b)}})();
+    </script>
 
 </body>
 
