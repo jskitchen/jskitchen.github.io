@@ -5,10 +5,10 @@
     --backdrop: #e9e6e0;
     --window: #f4f2ea;
     --text: #1a1815;
-    --muted: #9a978c;
+    --muted: #66635b;
     --tagline: #57534a;
-    --prompt: #b0ac9f;
-    --accent: #c79a00;
+    --prompt: #6f6c63;
+    --accent: #8a6500;
     --border: #e0ddd2;
     --link-border: #d6d3c8;
     --dot-active: #e0b400;
@@ -21,9 +21,9 @@
         --backdrop: #080807;
         --window: #0e0e0d;
         --text: #e8e6e0;
-        --muted: #6d6d66;
+        --muted: #8f8e86;
         --tagline: #b7b5ad;
-        --prompt: #6d6d66;
+        --prompt: #7c7b73;
         --accent: #f7df1e;
         --border: #232320;
         --link-border: #2e2e2a;
@@ -227,4 +227,78 @@ a {
         flex-direction: column;
         gap: 3px;
     }
+}
+
+/* --- soup-pot logo mark (replaces the emoji) --- */
+.pot {
+    width: 0.92em;
+    height: 0.92em;
+    display: inline-block;
+    vertical-align: -0.12em;
+    margin-left: 0.08em;
+    color: var(--text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .pot__steam path {
+        transform-box: fill-box;
+        transform-origin: center bottom;
+        animation: steam 3.2s ease-in-out infinite;
+    }
+
+    .pot__steam path:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .pot__steam path:nth-child(3) {
+        animation-delay: 1s;
+    }
+}
+
+@keyframes steam {
+    0%, 100% {
+        opacity: 0.25;
+        transform: translateY(2px) scaleY(0.9);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translateY(-2px) scaleY(1.05);
+    }
+}
+
+/* --- terminal boot: typewriter caret + staggered reveal --- */
+/* These only take effect once boot.js adds .is-animated (and never when
+   the visitor prefers reduced motion), so no-JS visitors get the full,
+   static page immediately. */
+.caret {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 3px;
+    vertical-align: -0.18em;
+    background: var(--accent);
+    opacity: 0;
+}
+
+.terminal.is-animated .caret.caret--on {
+    opacity: 1;
+    animation: blink 1.05s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.terminal.is-animated .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.terminal.is-animated .reveal.is-shown {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }

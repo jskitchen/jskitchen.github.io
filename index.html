@@ -31,7 +31,7 @@
     <link rel="alternate" hreflang="en" href="https://javascript-kitchen.js.org/en/">
     <link rel="alternate" hreflang="x-default" href="https://javascript-kitchen.js.org/">
 
-    <title>JavaScript Kitchen 🍲</title>
+    <title>JavaScript Kitchen</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +39,7 @@
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/static/css/landing.css">
+    <script src="/static/js/boot.js" defer></script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -68,19 +69,31 @@
         </header>
 
         <div class="terminal__body">
-            <div class="cmd">$ whoami</div>
-            <h1 class="title">JavaScript<br><span class="accent">Kitchen</span> 🍲</h1>
+            <div class="cmd">$ <span class="cmd__typed">whoami</span><span class="caret" aria-hidden="true"></span></div>
+            <h1 class="title reveal">JavaScript<br><span class="accent">Kitchen</span><svg class="pot" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">
+                    <g class="pot__steam" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round">
+                        <path d="M23 6c-2.6 3 2.6 5 0 8" />
+                        <path d="M32 4c-2.6 3 2.6 5 0 8" />
+                        <path d="M41 6c-2.6 3 2.6 5 0 8" />
+                    </g>
+                    <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 30h46" />
+                        <path d="M13 30c0 12.5 8.5 21 19 21s19-8.5 19-21" />
+                        <path d="M8 33c-3 .4-2.4 7.5 2.6 8.2" />
+                        <path d="M56 33c3 .4 2.4 7.5-2.6 8.2" />
+                    </g>
+                </svg></h1>
             <div class="taglines">
-                <div><span class="prompt">&gt;</span> Обʼєднання JavaScript ентузіастів та митців.</div>
-                <div><span class="prompt">&gt;</span> A community of JavaScript enthusiasts &amp; makers.</div>
+                <div class="reveal"><span class="prompt">&gt;</span> Обʼєднання JavaScript ентузіастів та митців.</div>
+                <div class="reveal"><span class="prompt">&gt;</span> A community of JavaScript enthusiasts &amp; makers.</div>
             </div>
 
-            <div class="cmd cmd--channels">$ join --channels</div>
+            <div class="cmd cmd--channels reveal">$ <span class="cmd__typed">join --channels</span><span class="caret" aria-hidden="true"></span></div>
             <nav class="channels" aria-label="Соцмережі">
-                <a href="https://t.me/js_kitchen">Telegram</a>
-                <a href="https://www.threads.com/@javascriptkitchen?invite=0">Threads</a>
-                <a href="https://twitter.com/_jskitchen">Twitter</a>
-                <a href="https://www.facebook.com/javascriptkitchen">Facebook</a>
+                <a class="reveal" href="https://t.me/js_kitchen">Telegram</a>
+                <a class="reveal" href="https://www.threads.com/@javascriptkitchen?invite=0">Threads</a>
+                <a class="reveal" href="https://twitter.com/_jskitchen">Twitter</a>
+                <a class="reveal" href="https://www.facebook.com/javascriptkitchen">Facebook</a>
             </nav>
         </div>
 
