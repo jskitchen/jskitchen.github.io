@@ -1,8 +1,3 @@
-/* JavaScript Kitchen — terminal boot sequence.
-   Progressive enhancement: the page is fully rendered and readable without
-   this script. When motion is welcome, we retype the command lines and
-   stagger-reveal the output for a "cold boot" feel. Bail out entirely for
-   visitors who prefer reduced motion. */
 (function () {
     var prefersReduced =
         window.matchMedia &&
@@ -23,7 +18,6 @@
     var whoami = { el: typedEls[0], caret: caretFor(typedEls[0]) };
     var join = { el: typedEls[1], caret: caretFor(typedEls[1]) };
 
-    // Stash the real text, then clear so we can type it back in.
     whoami.text = whoami.el.textContent;
     join.text = join.el.textContent;
     whoami.el.textContent = '';
@@ -81,8 +75,74 @@
             show(btns[j]);
             await sleep(90);
         }
-        // Leave the prompt cursor blinking — the terminal stays "alive".
     }
 
     boot();
+})();
+
+(function () {
+    var prefersReduced =
+        window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dots = document.querySelectorAll('.terminal__bar .dot');
+    if (dots.length < 3 || prefersReduced) return;
+
+    var IDLE = 'var(--dot-idle)';
+    var YELLOW = '#FFDD00';
+    var BLUE = '#0057B7';
+    var RED = '#e5484d';
+    var BLACK = '#0d0d0d';
+
+    function sleep(ms) {
+        return new Promise(function (r) { setTimeout(r, ms); });
+    }
+    function setAll(color) {
+        dots.forEach(function (d) { d.style.background = color; });
+    }
+    function smooth(on) {
+        dots.forEach(function (d) {
+            d.style.transition = on ? 'background 0.18s ease' : 'none';
+        });
+    }
+
+    async function run() {
+        while (true) {
+            smooth(true);
+            setAll(IDLE);
+            await sleep(700);
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].style.background = YELLOW;
+                await sleep(280);
+            }
+            await sleep(500);
+
+            for (var b = 0; b < 6; b++) {
+                setAll(b % 2 === 0 ? BLUE : YELLOW);
+                await sleep(320);
+            }
+            await sleep(300);
+
+            for (var j = 0; j < dots.length; j++) {
+                dots[j].style.background = RED;
+                await sleep(200);
+            }
+            await sleep(300);
+
+            smooth(false);
+            var end = Date.now() + 3000;
+            while (Date.now() < end) {
+                dots.forEach(function (d) {
+                    d.style.background = Math.random() < 0.5 ? RED : BLACK;
+                });
+                await sleep(110 + Math.random() * 240);
+            }
+
+            smooth(true);
+            setAll(IDLE);
+            await sleep(5000);
+        }
+    }
+
+    setTimeout(run, 7000);
 })();
