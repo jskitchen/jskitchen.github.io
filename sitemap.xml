@@ -4,8 +4,16 @@
 
   <url>
     <loc>https://javascript-kitchen.js.org/</loc>
-    <lastmod>2020-10-26T21:49:00+03:00</lastmod>
-    <priority>0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://javascript-kitchen.js.org/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://javascript-kitchen.js.org/en/" />
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://javascript-kitchen.js.org/en/</loc>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://javascript-kitchen.js.org/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://javascript-kitchen.js.org/en/" />
+    <priority>0.9</priority>
   </url>
 
 </urlset>
